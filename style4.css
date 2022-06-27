@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+}
+
+ .topic{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content .list{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 900px;
+  margin-right: 50px;
+  position: relative;
+  background-color: rgb(82, 197, 82);
+}
+.content .list label{
+  height: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+  
+}
+#para:checked ~ .list label.para,
+#util:checked ~ .list label.util,
+#info:checked ~ .list label.info,
+#decon:checked ~ .list label.decon{
+  color: #fff;
+}
+.content .list label:hover{
+  color: #6d50e2;
+}
+.content .slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  background: #6d50e2;
+  transition: all 0.4s ease;
+}
+#para:checked ~ .list .slider{
+  top: 0;
+}
+#util:checked ~ .list .slider{
+  top: 60px;
+}
+#info:checked ~ .list .slider{
+  top: 120px;
+}
+
+#decon:checked ~ .list .slider{
+  top: 180px;
+}
+
+
+
+.content .text-content .para{
+  display: block;
+}
+#para:checked ~ .text-content .para,
+#util:checked ~ .text-content .util,
+#info:checked ~ .text-content .info,
+#decon:checked ~ .text-content .decon{
+  display: block;
+}
+#util:checked ~ .text-content .para,
+#info:checked ~ .text-content .para,
+
+#decon:checked ~ .text-content .para{
+  display: none;
+}
+.content input{
+  display: none;
+}
+
+
+
+
+
+
+
+.formulaire{
+    position: relative;
+    background: white;
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+  
+    
+    
+}
+.formulaire form{
+    padding: 0 20px;
+    
+}
+
+ .field input{
+    
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 2px solid rgb(82, 197, 82);
+    
+    outline: none;
+    background: none;
+
+}
+.field label{
+   color: #adadad;
+   position: absolute;
+   left: 10px;
+   pointer-events: none;
+   top: 50%;
+}
+input[type='submit']{
+    
+    width: 40%;
+    height: 30px;
+    background-color: rgb(82, 197, 82);
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left:30%;
+    margin-right: 30%;
+    color: white;
+    
+}
+input[type='submit']:hover{
+    background-color: blue;
+}
+
+.image i{
+    font-size: 50px;
+    color: white;
+    padding: 25px;
+    
+}
+#profileDisplay{
+    height: 30%;
+    width: 30%;
+    margin: 35%;
+}
+.image{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-left:30%;
+    margin-right: 30%;
+
+}
+
+  
+   
+   #img_div{
+  
+    background: white;
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    margin: 10px 0 10px 10px; 
+   
+   }
+   #text_div{
+  margin-top:20px;
+    margin-left:30%;
+    margin-right: 30%;
+ }
+ 
+   
+ 
+   img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-left:30%;
+    margin-right: 30%;
+   }
+   .iframe{
+    height: 500px;
+   }
+   .main_div{
+    width: 365px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+
+  }
+  .main_div .title{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color:rgb(14, 160, 62);
+  }
+  .main_div .avatar1{
+    width: 50%;
+    height: 50%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    color: #0e7736;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    left:25%;
+  }
+  form {
+    margin-top: 25px;
+  }
+  form .input_box{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #0e7736;
+    padding: 5px;
+   
+  }
+  .input_box input{
+    height: 100%;
+    width: 100%;
+    margin-top: 3px;
+    outline: none;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding-left: 45px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+  }
+  .input_box input:focus{
+    border-color: #0e7736;
+  }
+  .input_box .icon{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    margin-top: 25px;
+    transform: translateY(-50%);
+    color: #0e7736;
+  }
+
+  .button input{
+    padding-left: 0;
+    background: #0e7736;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .button input:hover{
+    background:#0e7736;
+  }
+  form .sign_up{
+    text-align: center;
+    margin-top: 25px;
+  }
+  .sign_up a{
+    color: #0e7736;
+  }
+  form a{
+    text-decoration: none;
+  }
+  form a:hover{
+    text-decoration: underline;
+  }
+  
