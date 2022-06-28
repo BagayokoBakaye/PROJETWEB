@@ -25,7 +25,7 @@
   	// execute query
   	mysqli_query($db, $sql);
 
-  	if (move_uploaded_file($_FILES['image']['tmp_name'], $image_location)) {
+  	if (move_uploaded_file($_FILES['image'], $image_location)) {
   		$msg = "Image uploaded successfully";
   	}else{
   		$msg = "Failed to upload image";
@@ -34,7 +34,7 @@
 
  
   $result = mysqli_query($db, "SELECT * FROM images");
-
+  
 
 ?>
 <!DOCTYPE html>
@@ -147,7 +147,7 @@
  
  flex-flow : wrap;
  margin-left: 250px;
- padding:5px;
+
    }
    form{
     width: 100%;
@@ -291,18 +291,77 @@ textarea:hover{
  background-color:gray;
  border-radius:5px;
  display:block;
- position: relative;
+ 
 }
 #img_textde{
- width: 100%;
- height: 100%;
- position:absolute;
- background-color: rgba(0 0 0 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+ border-radius:5px;
+ background-color: rgb(0,0,0,0.6);
  color:white;
- font-size:20px;
+ font-size:30px;
+ top:0px;
+ opacity:0;
+ 
+ 
+ 
+ 
+}
+#img_textde:hover{
+opacity:1;
+}
+.fa-trash{
+    margin:30%;
+    font-size:50%;
+}
+.fa-pen{
+    font-size:50%;
+    margin:30%;
+}
+.delete{
+    color:white;
+    background-color:red;
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    
+}
+.edit{
+    color:white;
+    background-color:orange;
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    margin-left:5px;
+    
+}
+#editdelete{
+    display:flex;
+    margin-left:70%;
+    margin-top:-15px;
+    
+   
+}
+#prixnombre{
+    display:flex;
+    margin-top:30%;
+   
+   
+    
+   
+}
+.price{
+    margin-left:10%;
+}
+.number{
+    
  display:flex;
- 
- 
+   
+ margin-left:40%;
+}
+.description{
+    font-size:22px;
 }
 
     
@@ -360,7 +419,7 @@ textarea:hover{
       <div class="soume">
   		
          
-          <input type="submit" name="submit" id="submit" >
+          <input type="submit" name="submit" value="submit" >
   	</div>
       <textarea 
       	id="text1" 
@@ -402,22 +461,36 @@ textarea:hover{
   </form>
   </div>
   
+  <div class="content3">
   <?php
     while ($row = mysqli_fetch_array($result)) {
       echo "<div id='imagede'>";
       echo "<div id='img_divde'><img src='images/".$row['image']."' ></div>";
       echo "<div id='img_textde'>";
-
+      echo "<div id='editdelete'>";
+      echo "<div class='delete'><i class='fa-solid fa-trash'></i></div>";
+      echo "<div class='edit'><i class='fas fa-pen'></i></div>";
+      echo "</div>";
       echo "<div class='name'>".$row['name']."</div>";
       echo "<div class='description'>".$row['text']."</div>";
-      echo "<div class='price'>".$row['prices']."</div>";
-      echo "<div class='number'>".$row['number']."</div>";
-      echo "</div>";
+      echo "<div id='prixnombre'>";
+      echo "<div class='price'><p>".$row['prices']."</p></div>";
+      echo "<div class='number'>";
+      echo"<p>".$row['number']."</p>";
+      echo" <p>copies</p>";
+      echo"</div>";
+      echo"</div>";
+     
+      
+      
+      
+     
       echo "</div>";
       
       
     }
   ?>
+  </div>
   </div>
 </div>
 </div>
